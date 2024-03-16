@@ -36,17 +36,17 @@ namespace XUnity.AutoTranslator.Plugin.Core
                LoadTranslationsInStream( stream, fullFileName, isSubstitutionFile, isPreprocessorFile, isPostprocessorsFile );
             }
          }
-         else
-         {
-            var fi = new FileInfo( fullFileName );
-            Directory.CreateDirectory( fi.Directory.FullName );
+         // else
+         // {
+         //    var fi = new FileInfo( fullFileName );
+         //    Directory.CreateDirectory( fi.Directory.FullName );
 
-            using( var stream = File.Create( fullFileName ) )
-            {
-               stream.Write( new byte[] { 0xEF, 0xBB, 0xBF }, 0, 3 ); // UTF-8 BOM
-               stream.Close();
-            }
-         }
+         //    using( var stream = File.Create( fullFileName ) )
+         //    {
+         //       stream.Write( new byte[] { 0xEF, 0xBB, 0xBF }, 0, 3 ); // UTF-8 BOM
+         //       stream.Close();
+         //    }
+         // }
       }
 
       private static void LoadTranslationsInStream( Stream stream, string fullFileName, bool isSubstitutionFile, bool isPreprocessorFile, bool isPostProcessorFile )
